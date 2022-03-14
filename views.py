@@ -352,7 +352,10 @@ def problem_seven(request):
 
 
     try:
-        student = Student.objects.get(pk=student_id)
+        student = Student.objects.get(pk=student_id).delete()
+        print(student)
+
+        
     except ObjectDoesNotExist:
         print('Great! It failed and couldnt find the object because we deleted it!')
 
